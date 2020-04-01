@@ -1,0 +1,8 @@
+#!/bin/sh
+
+certbot revoke --cert-path=/etc/letsencrypt/live/$1/cert.pem
+certbot delete -d $1
+
+rm -rf /var/www/html/$1
+rm -f /etc/nginx/conf.d/$1.conf
+nginx -s reload
