@@ -6,8 +6,7 @@ proxyx
 
 ## Description
 
-proxyx は、[Docker](https://www.docker.com/) と
-[Let's Encrypt](https://letsencrypt.org) を活用します。
+proxyx は、[Docker](https://www.docker.com/) と [Let's Encrypt](https://letsencrypt.org) を活用します。
 SSL サーバ証明書の発行は、Let's Encrypt が定めるレート制限 ( [Rate Limits](https://letsencrypt.org/docs/rate-limits/) ) に依存しますのでご注意ください。
 まずは、独自ドメインの A レコードを設定し、Let's Encrypt のサーバーから独自ドメインの Web サービスへアクセスできるようにしてください。
 そして、proxyx の certadd を実行すれば、簡単に Web サービスを HTTPS 化することができます。
