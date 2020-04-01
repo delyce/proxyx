@@ -32,7 +32,7 @@ docker-compose exec nginx certdel <Your Domain>
 
 ## Licence
 
-[MIT](https://github.com/delyce/proxyx/LICENCE)
+[MIT](https://choosealicense.com/licenses/mit/)
 
 ## Author
 
