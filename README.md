@@ -13,37 +13,22 @@ SSL サーバ証明書の発行は、Let's Encrypt が定めるレート制限 (
 
 ## Usage
 
-インストール
-
-```bash
-git clone https://github.com/delyce/proxyx.git /opt/proxyx
-cd /opt/proxyx
-docker-compose up -d
+```
+docker-compose exec nginx certadd <Your Domain> <Your E-Mail> <Web Service URI>
+docker-compose exec nginx certdel <Your Domain>
 ```
 
-SSL サーバ証明書の発行
-certadd *Your Domain* *Your E-Mail Address* *Web Service URI*
-*Your Domain*
-あなたが管理する独自ドメインを指定します。
-*Your E-Mail Address*
-Let's Encrypt からのお知らせを受信するメールアドレスを指定します。
-*Web Service URI*
-Web サービスのURIを指定します。
+- certadd
 
-```bash
-cd /opt/proxyx
-docker-compose exec nginx certadd www.example.com webmaster@example.com http://localhost:3000
-```
+    SSL サーバ証明書の発行を実行します。
+    `<Your Domain>` にあなたが管理する独自ドメインを指定します。
+    `<Your E-Mail>` に Let's Encrypt からのお知らせを受信するメールアドレスを指定します。
+    `<Web Service URI>` に Web サービスのURIを指定します。
+    
+- certdel
 
-SSL サーバ証明書の失効
-certdel *Your Domain*
-*Your Domain*
-あなたが管理する独自ドメインを指定します。
-
-```bash
-cd /opt/proxyx
-docker-compose exec nginx certdel www.example.com
-```
+    SSL サーバ証明書の失効を実行します。
+    `<Your Domain>` にあなたが管理する独自ドメインを指定します。
 
 ## Licence
 
@@ -52,5 +37,3 @@ docker-compose exec nginx certdel www.example.com
 ## Author
 
 [delyce](https://github.com/delyce)
-
-
